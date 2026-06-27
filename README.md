@@ -1,38 +1,43 @@
 # Value Investing Algorithm
 
-A quantitative value investing screener that ranks securities using fundamental analysis ratios, identifying the top 10 most undervalued stocks from a given universe.
+A quantitative value investing screener that ranks S&P 500 securities using five fundamental analysis ratios, identifying the top 10 most undervalued stocks.
 
 ## Overview
 
-This algorithm implements a multi-factor value scoring system using five key fundamental ratios. Each security is scored and ranked across all metrics to produce a composite value score, surfacing the most attractively valued opportunities.
+This algorithm implements a multi-factor value scoring system using five key valuation ratios. Each security is percentile-ranked across all metrics to produce a composite value score, surfacing the most attractively valued opportunities in the S&P 500.
 
 ## Methodology
 
-Securities are evaluated using:
-- **Price-to-Earnings (P/E)** ratio
-- **Price-to-Book (P/B)** ratio
-- **Price-to-Sales (P/S)** ratio
-- **EV/EBITDA** (Enterprise Value to EBITDA)
-- **EV/GP** (Enterprise Value to Gross Profit)
+Securities are evaluated and percentile-ranked using:
 
-Each ratio is percentile-ranked across the universe, and a composite score selects the top 10 undervalued securities.
+| Ratio | What it measures |
+|-------|------------------|
+| **P/E** | Share price relative to earnings per share |
+| **P/B** | Market price relative to book value |
+| **P/S** | Market valuation relative to total sales |
+| **EV/EBITDA** | Enterprise value relative to core operating profitability |
+| **EV/GP** | Enterprise value relative to gross profit |
 
 ## Tools & Libraries
 
-- **Python** (pandas, NumPy, yfinance, SciPy)
+- **Python** (pandas, NumPy, yfinance, SciPy, matplotlib)
 - Fundamental data via Yahoo Finance API
-- Statistical ranking and percentile scoring
+- Statistical percentile ranking and composite scoring
 
 ## Key Outputs
 
-- Ranked list of top 10 undervalued securities
 - Composite value scores across all five metrics
-- Recommended position sizes based on portfolio value
+- Percentile heatmap showing per-metric rankings
+- Recommended position sizes for a $500,000 portfolio
 
-## Module
+## Sample Output
+
+![Value Investing Results](value_investing_results.png)
+
+## Project Type
 
 Personal Project
 
 ## Usage
 
-*Jupyter notebook with full implementation and walkthrough coming soon.*
+Open [`value_investing.ipynb`](value_investing.ipynb) for the full implementation and walkthrough.
